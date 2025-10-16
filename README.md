@@ -15,7 +15,7 @@ Instalación
 npm install
 ```
 
-3. Configura las credenciales de Firebase (no subirlas al repo): crea un archivo `serviceAccountKey.json` y cargar el contenido segun `firebase-admin`. 
+3. Configura las credenciales de Firebase (no subirlas al repo): crea un archivo `serviceAccountKey.json` y cargar el contenido segun `firebase-admin` dentro de /config. 
 
 Ejecución
 
