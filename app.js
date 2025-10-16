@@ -5,7 +5,10 @@ const path = require("path"); //Para la vista principal
 
 const estudiantesRouter = require("./routes/estudiantesRoute");   
 const cursosRouter = require("./routes/cursosRoute"); 
-const matriculasRouter = require("./routes/matriculasRoute");     
+const matriculasRouter = require("./routes/matriculasRoute");    
+const profesoresRouter = require("./routes/profesoresRoute");
+const evaluacionesRouter = require("./routes/evaluacionesRoute");
+const certificadosRouter = require("./routes/certificadosRoute");    
 
 const app = express();
 app.use(cors());
@@ -35,6 +38,9 @@ app.get('/', (req, res) => {
 app.use("/estudiantes", estudiantesRouter);
 app.use("/cursos", cursosRouter);
 app.use("/matriculas", matriculasRouter);
+app.use("/profesores", profesoresRouter);
+app.use("/evaluaciones", evaluacionesRouter);
+app.use("/certificados", certificadosRouter);
 
 app.listen(PORT, "0.0.0.0", () => {
     const localIP = getLocalIP();
