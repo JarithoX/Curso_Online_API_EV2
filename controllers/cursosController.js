@@ -1,21 +1,9 @@
-const express = require('express')
-const admin = require('firebase-admin')
-const db = require('./serviceAccountKey.json')
-const cors = require('cors')
-
-//Conexión a Firebase
-admin.initializeApp({
-  credential: admin.credential.cert(db)
-})
-
-const app = express();
-app.use(cors());
-app.use(express.json());
+const db = require('../config/firebase')
 
 //Metodo para obtener los cursos
-app.get('/cursos', async (req, res) => {
+exports.getCursos = async (req, res) => {
     try{
-        const datos = await admin.firestore().collection('cursos').get()
+        const datos = await db.collection('cursos').get()
         const cursos = []
 
         datos.forEach(doc => {
@@ -26,13 +14,4 @@ app.get('/cursos', async (req, res) => {
     } catch (error) {
         res.status(500).send('Error al obtener los cursos de Firebase: '+error.message);
     }
-});
-
-//Puerto donde se ejecutara
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(` ========= API Cursos =========
- Servidor Compilado en:
-        - http://localhost:${PORT}/cursos
-        - http://192.168.100.97:${PORT}/cursos`)
-});
+};

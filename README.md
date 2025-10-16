@@ -1,13 +1,18 @@
 # API Curso Online (EV2)
-
 Instrucciones mínimas para ejecutar este proyecto en desarrollo.
 
-Requisitos
-- Node.js (winget install OpenJs.NodeJS.LTS) (node -v)
-
+Requisitos:
+- Node.js - Comprueba con el comando [ node -v ] si lo tienes instalado, de lo contrario lo puedes instalar con el siguiente comando:
+```powershell
+winget install OpenJs.NodeJS.LTS
+```
 Instalación
 
 1. Clona el repositorio y entra en la carpeta del proyecto.
+
+```powershell
+git clone https://github.com/JarithoX/Curso_Online_API_EV2.git
+```
 
 2. Instala las dependencias:  ejecuta `npm install` — esto descargará e instalará las dependencias declaradas en `package.json`.
 
@@ -15,19 +20,16 @@ Instalación
 npm install
 ```
 
-3. Configura las credenciales de Firebase (no subirlas al repo): crea un archivo `serviceAccountKey.json` y cargar el contenido segun `firebase-admin` dentro de /config. 
+3. Configura las credenciales de Firebase: crea un archivo `serviceAccountKey.json` y cargar el contenido de `firebase` dentro de /config. 
 
-Ejecución
-
-Inicia la aplicación:
+4. Ejecución
+- Inicia la aplicación:
 
 ```powershell
-node crudCursos.js
+node app.js
 ```
 
-o ejecuta el archivo principal que uses (por ejemplo `crudMatriculas.js`) según el endpoint que quieras probar.
-
-4. Subir archivos a Repositorio GitHub:
+5. Subir archivos a Repositorio GitHub:
 
 - Muestra el estado para ver qué archivos están modificados (M) o no rastreados (??)
 ```powershell

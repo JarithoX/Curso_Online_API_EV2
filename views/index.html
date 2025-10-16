@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>APIS - Home</title>
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --accent: #7c3aed;
+            --muted: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, #071126 0%, #071022 100%);
+            color: #e6eef8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 760px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #2dd4bf);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: white;
+            box-shadow: 0 6px 18px rgba(124, 58, 237, 0.18);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        p.lead {
+            margin: 6px 0 18px;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 12px;
+        }
+
+        a.route {
+            display: block;
+            text-decoration: none;
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 14px;
+            border-radius: 10px;
+            color: inherit;
+            transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+        }
+
+        a.route:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(2, 6, 23, 0.6);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005));
+        }
+
+        .route .title {
+            font-weight: 600;
+            margin-bottom: 6px
+        }
+
+        .route .desc {
+            font-size: 13px;
+            color: var(--muted)
+        }
+
+        footer {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f7f9fc;
+                --card: #ffffff;
+                --accent: #4f46e5;
+                --muted: #6b7280;
+                --glass: rgba(15, 23, 42, 0.03)
+            }
+
+            body {
+                color: #071022
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card">
+        <header>
+            <div class="logo">APIS</div>
+            <div>
+                <h1>APIS Plataforma — Curso Online</h1>
+                <p class="lead">Selecciona una ruta para ver los endpoints.</p>
+            </div>
+        </header>
+
+        <section class="grid">
+            <a class="route" href="/estudiantes">
+                <div class="title">👩‍🎓 Estudiantes</div>
+                <div class="desc">accede a la API de estudiantes.</div>
+            </a>
+
+            <a class="route" href="/cursos">
+                <div class="title">📚 Cursos</div>
+                <div class="desc">accede a la API de cursos.</div>
+            </a>
+
+            <a class="route" href="/matriculas">
+                <div class="title">📝 Matrículas</div>
+                <div class="desc">accede a la API de matriculas.</div>
+            </a>
+        </section>
+
+        <footer>
+            <span class="badge">Inacap</span>
+            <span>Accede con las rutas rápidas ↑</span>
+        </footer>
+    </main>
+</body>
+
+</html>
