@@ -3,7 +3,7 @@
 Instrucciones mínimas para ejecutar este proyecto en desarrollo.
 
 Requisitos
-- Node.js (winget install OpenJs.NodeJS.LTS)
+- Node.js (winget install OpenJs.NodeJS.LTS) (node -v)
 
 Instalación
 
