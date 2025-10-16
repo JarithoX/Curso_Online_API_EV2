@@ -39,17 +39,41 @@ exports.addEstudiante = async (req, res) => {
 };
 
 exports.updateEstudiante = async (req, res) => {
+
     try{
+        const id = req.params.id;
+        const datosActualizados = req.body;
 
+        const docRef = db.collection('estudiantes').doc(id);
+        const doc = await docRef.get();
+        if (!doc.exists) {
+            return res.status(404).send('Estudiante no encontrado');
+        }
+
+        // Actualiza solo los campos enviados en el body
+        await docRef.update(datosActualizados);
+
+        // Obtener documento actualizado
+        const updatedDoc = await docRef.get();
+        res.status(200).json({ id: updatedDoc.id, ...updatedDoc.data() });
     } catch (error) {
-
+        res.status(500).send('Error al actualizar el estudiante en Firebase: ' + error.message);
     }
 };
 
 exports.deleteEstudiante = async (req, res) => {
+
     try{
+        const id = req.params.id;
+        const docRef = db.collection('estudiantes').doc(id);
+        const doc = await docRef.get();
+        if (!doc.exists) {
+            return res.status(404).send('Estudiante no encontrado');
+        }
 
+        await docRef.delete();
+        res.status(200).json({ message: 'Estudiante eliminado', id });
     } catch (error) {
-
+        res.status(500).send('Error al eliminar el estudiante de Firebase: ' + error.message);
     }
 };

@@ -3,9 +3,9 @@ const router = express.Router();
 const matriculasController = require('../controllers/matriculasController');
 
 router.get('/', matriculasController.getMatriculas);
-//router.get('/matriculas/:id', matriculasController.getMatriculaById);
+//router.get('/:id', matriculasController.getMatriculaById);
 //router.post('/matriculas', matriculasController.addMatricula);
-//router.put('/matriculas/:id', matriculasController.updateMatricula);
-//router.delete('/matriculas/:id', matriculasController.deleteMatricula);
+//router.put('/:id', matriculasController.updateMatricula);
+//router.delete('/:id', matriculasController.deleteMatricula);
 
 module.exports = router;
