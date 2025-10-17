@@ -39,17 +39,33 @@ exports.addEvaluacion = async (req, res) => {
 };
 
 exports.updateEvaluacion = async (req, res) => {
-    try{
-
+    try {
+        const id = req.params.id;
+        const datosActualizados = req.body;
+        const docRef = db.collection('evaluaciones').doc(id);
+        const doc = await docRef.get();
+        if (!doc.exists) {
+            return res.status(404).send('Evaluación no encontrada');
+        }
+        await docRef.update(datosActualizados);
+        const updatedDoc = await docRef.get();
+        res.status(200).json({ id: updatedDoc.id, ...updatedDoc.data() });
     } catch (error) {
-
+        res.status(500).send('Error al actualizar la evaluación en Firebase: ' + error.message);
     }
 };
 
 exports.deleteEvaluacion = async (req, res) => {
-    try{
-
+    try {
+        const id = req.params.id;
+        const docRef = db.collection('evaluaciones').doc(id);
+        const doc = await docRef.get();
+        if (!doc.exists) {
+            return res.status(404).send('Evaluación no encontrada');
+        }
+        await docRef.delete();
+        res.status(200).json({ message: 'Evaluación eliminada', id });
     } catch (error) {
-
+        res.status(500).send('Error al eliminar la evaluación de Firebase: ' + error.message);
     }
 };

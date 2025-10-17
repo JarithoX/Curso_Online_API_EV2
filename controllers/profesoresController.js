@@ -39,17 +39,33 @@ exports.addProfesor = async (req, res) => {
 };
 
 exports.updateProfesor = async (req, res) => {
-    try{
-
+    try {
+        const id = req.params.id;
+        const datosActualizados = req.body;
+        const docRef = db.collection('profesores').doc(id);
+        const doc = await docRef.get();
+        if (!doc.exists) {
+            return res.status(404).send('Profesor no encontrado');
+        }
+        await docRef.update(datosActualizados);
+        const updatedDoc = await docRef.get();
+        res.status(200).json({ id: updatedDoc.id, ...updatedDoc.data() });
     } catch (error) {
-
+        res.status(500).send('Error al actualizar el profesor en Firebase: ' + error.message);
     }
 };
 
 exports.deleteProfesor = async (req, res) => {
-    try{
-
+    try {
+        const id = req.params.id;
+        const docRef = db.collection('profesores').doc(id);
+        const doc = await docRef.get();
+        if (!doc.exists) {
+            return res.status(404).send('Profesor no encontrado');
+        }
+        await docRef.delete();
+        res.status(200).json({ message: 'Profesor eliminado', id });
     } catch (error) {
-
+        res.status(500).send('Error al eliminar el profesor de Firebase: ' + error.message);
     }
 };

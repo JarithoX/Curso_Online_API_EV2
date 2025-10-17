@@ -1,0 +1,332 @@
+{
+  "info": {
+    "_postman_id": "api-cursos-online-crud-2025",
+    "name": "API Cursos Online CRUD",
+    "description": "Colección completa de endpoints CRUD para todas las entidades de la API de Cursos Online.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Estudiantes",
+      "item": [
+        {
+          "name": "GET Todos",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/estudiantes", "host": ["{{base_url}}"], "path": ["estudiantes"]}
+          }
+        },
+        {
+          "name": "GET por ID",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/estudiantes/ID_AQUI", "host": ["{{base_url}}"], "path": ["estudiantes", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "POST Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Juan\",\n  \"apellido\": \"Pérez\",\n  \"email\": \"juan@ejemplo.com\",\n  \"rut\": \"12345678-9\",\n  \"telefono\": \"912345678\"\n}"},
+            "url": {"raw": "{{base_url}}/estudiantes", "host": ["{{base_url}}"], "path": ["estudiantes"]}
+          }
+        },
+        {
+          "name": "PUT Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Juan Modificado\",\n  \"apellido\": \"Pérez\",\n  \"email\": \"juan@ejemplo.com\",\n  \"rut\": \"12345678-9\",\n  \"telefono\": \"912345678\"\n}"},
+            "url": {"raw": "{{base_url}}/estudiantes/ID_AQUI", "host": ["{{base_url}}"], "path": ["estudiantes", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "DELETE Eliminar",
+          "request": {
+            "method": "DELETE",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/estudiantes/ID_AQUI", "host": ["{{base_url}}"], "path": ["estudiantes", "ID_AQUI"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cursos",
+      "item": [
+        {
+          "name": "GET Todos",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/cursos", "host": ["{{base_url}}"], "path": ["cursos"]}
+          }
+        },
+        {
+          "name": "GET por ID",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/cursos/ID_AQUI", "host": ["{{base_url}}"], "path": ["cursos", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "POST Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Backend\",\n  \"descripcion\": \"Curso de backend\"\n}"},
+            "url": {"raw": "{{base_url}}/cursos", "host": ["{{base_url}}"], "path": ["cursos"]}
+          }
+        },
+        {
+          "name": "PUT Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Backend Modificado\",\n  \"descripcion\": \"Curso de backend\"\n}"},
+            "url": {"raw": "{{base_url}}/cursos/ID_AQUI", "host": ["{{base_url}}"], "path": ["cursos", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "DELETE Eliminar",
+          "request": {
+            "method": "DELETE",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/cursos/ID_AQUI", "host": ["{{base_url}}"], "path": ["cursos", "ID_AQUI"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profesores",
+      "item": [
+        {
+          "name": "GET Todos",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/profesores", "host": ["{{base_url}}"], "path": ["profesores"]}
+          }
+        },
+        {
+          "name": "GET por ID",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/profesores/ID_AQUI", "host": ["{{base_url}}"], "path": ["profesores", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "POST Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Profesor Ejemplo\",\n  \"email\": \"profesor@ejemplo.com\"\n}"},
+            "url": {"raw": "{{base_url}}/profesores", "host": ["{{base_url}}"], "path": ["profesores"]}
+          }
+        },
+        {
+          "name": "PUT Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Profesor Modificado\",\n  \"email\": \"profesor@ejemplo.com\"\n}"},
+            "url": {"raw": "{{base_url}}/profesores/ID_AQUI", "host": ["{{base_url}}"], "path": ["profesores", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "DELETE Eliminar",
+          "request": {
+            "method": "DELETE",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/profesores/ID_AQUI", "host": ["{{base_url}}"], "path": ["profesores", "ID_AQUI"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Evaluaciones",
+      "item": [
+        {
+          "name": "GET Todos",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/evaluaciones", "host": ["{{base_url}}"], "path": ["evaluaciones"]}
+          }
+        },
+        {
+          "name": "GET por ID",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/evaluaciones/ID_AQUI", "host": ["{{base_url}}"], "path": ["evaluaciones", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "POST Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Evaluación Ejemplo\",\n  \"curso_id\": \"ID_CURSO\"\n}"},
+            "url": {"raw": "{{base_url}}/evaluaciones", "host": ["{{base_url}}"], "path": ["evaluaciones"]}
+          }
+        },
+        {
+          "name": "PUT Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Evaluación Modificada\",\n  \"curso_id\": \"ID_CURSO\"\n}"},
+            "url": {"raw": "{{base_url}}/evaluaciones/ID_AQUI", "host": ["{{base_url}}"], "path": ["evaluaciones", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "DELETE Eliminar",
+          "request": {
+            "method": "DELETE",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/evaluaciones/ID_AQUI", "host": ["{{base_url}}"], "path": ["evaluaciones", "ID_AQUI"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Certificados",
+      "item": [
+        {
+          "name": "GET Todos",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/certificados", "host": ["{{base_url}}"], "path": ["certificados"]}
+          }
+        },
+        {
+          "name": "GET por ID",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/certificados/ID_AQUI", "host": ["{{base_url}}"], "path": ["certificados", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "POST Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Certificado Ejemplo\",\n  \"estudiante_id\": \"ID_ESTUDIANTE\",\n  \"curso_id\": \"ID_CURSO\"\n}"},
+            "url": {"raw": "{{base_url}}/certificados", "host": ["{{base_url}}"], "path": ["certificados"]}
+          }
+        },
+        {
+          "name": "PUT Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"nombre\": \"Certificado Modificado\",\n  \"estudiante_id\": \"ID_ESTUDIANTE\",\n  \"curso_id\": \"ID_CURSO\"\n}"},
+            "url": {"raw": "{{base_url}}/certificados/ID_AQUI", "host": ["{{base_url}}"], "path": ["certificados", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "DELETE Eliminar",
+          "request": {
+            "method": "DELETE",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/certificados/ID_AQUI", "host": ["{{base_url}}"], "path": ["certificados", "ID_AQUI"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Matriculas",
+      "item": [
+        {
+          "name": "GET Todos",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/matriculas", "host": ["{{base_url}}"], "path": ["matriculas"]}
+          }
+        },
+        {
+          "name": "GET por ID",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/matriculas/ID_AQUI", "host": ["{{base_url}}"], "path": ["matriculas", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "POST Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"estudiante_id\": \"ID_ESTUDIANTE\",\n  \"curso_id\": \"ID_CURSO\"\n}"},
+            "url": {"raw": "{{base_url}}/matriculas", "host": ["{{base_url}}"], "path": ["matriculas"]}
+          }
+        },
+        {
+          "name": "PUT Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"},
+              {"key": "Content-Type", "value": "application/json", "type": "text"}
+            ],
+              "body": {"mode": "raw", "raw": "{\n  \"estudiante_id\": \"ID_ESTUDIANTE\",\n  \"curso_id\": \"ID_CURSO\"\n}"},
+            "url": {"raw": "{{base_url}}/matriculas/ID_AQUI", "host": ["{{base_url}}"], "path": ["matriculas", "ID_AQUI"]}
+          }
+        },
+        {
+          "name": "DELETE Eliminar",
+          "request": {
+            "method": "DELETE",
+            "header": [{"key": "Clave-De-Autenticacion", "value": "{{auth_key}}", "type": "text"}],
+            "url": {"raw": "{{base_url}}/matriculas/ID_AQUI", "host": ["{{base_url}}"], "path": ["matriculas", "ID_AQUI"]}
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {"key": "base_url", "value": "http://localhost:3000", "type": "string"},
+    {"key": "auth_key", "value": "api_key_ev2_2023_inacap_123", "type": "string"}
+  ]
+}
