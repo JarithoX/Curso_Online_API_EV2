@@ -3,12 +3,16 @@ const cors = require("cors");
 const os = require("os");
 const path = require("path"); //Para la vista principal
 
+// Cargar variables de entorno
+try { require('dotenv').config(); } catch (e) {}
+
 const estudiantesRouter = require("./routes/estudiantesRoute");   
 const cursosRouter = require("./routes/cursosRoute"); 
 const matriculasRouter = require("./routes/matriculasRoute");    
 const profesoresRouter = require("./routes/profesoresRoute");
 const evaluacionesRouter = require("./routes/evaluacionesRoute");
 const certificadosRouter = require("./routes/certificadosRoute");    
+const auth = require('./middlewares/authMiddleware');
 
 const app = express();
 app.use(cors());
@@ -35,12 +39,13 @@ app.get('/', (req, res) => {
 });
 
 // ✅ Montar routers para estudiantes, cursos y matrículas
-app.use("/estudiantes", estudiantesRouter);
-app.use("/cursos", cursosRouter);
-app.use("/matriculas", matriculasRouter);
-app.use("/profesores", profesoresRouter);
-app.use("/evaluaciones", evaluacionesRouter);
-app.use("/certificados", certificadosRouter);
+// Proteger rutas de la API con la clave (excepto la raíz '/').
+app.use('/estudiantes', auth, estudiantesRouter);
+app.use('/cursos', auth, cursosRouter);
+app.use('/matriculas', auth, matriculasRouter);
+app.use('/profesores', auth, profesoresRouter);
+app.use('/evaluaciones', auth, evaluacionesRouter);
+app.use('/certificados', auth, certificadosRouter);
 
 app.listen(PORT, "0.0.0.0", () => {
     const localIP = getLocalIP();
