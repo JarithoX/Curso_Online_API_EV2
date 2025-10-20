@@ -22,6 +22,8 @@ const corsOrigin = process.env.CORS_ORIGIN || '*';
 app.use(cors({ origin: corsOrigin }));
 app.use(express.json());
 app.use(logger);
+// Servir archivos estáticos (views) para que el cliente pueda cargar assets o scripts
+app.use(express.static(path.join(__dirname, 'views')));
 
 const PORT = process.env.PORT || 3000;
 
@@ -42,6 +44,10 @@ function getLocalIP() {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
+
+// Rutas públicas para la página: no requieren la clave de autenticación
+const publicRoute = require('./routes/publicRoute');
+app.use('/datos', publicRoute);
 
 // ✅ Montar routers para estudiantes, cursos y matrículas
 // Proteger rutas de la API con la clave (excepto la raíz '/').
