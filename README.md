@@ -2,6 +2,46 @@
 
 API RESTful para la gestión de una plataforma de cursos online, desarrollada con Node.js, Express y Firebase.
 
+## ⚙️ Configuración
+
+1. Instalar dependencias:
+```bash
+npm install
+```
+
+2. Configurar variables de entorno:
+```bash
+# Crear archivo .env con:
+AUTH_KEY=api_key_ev2_2023_inacap_123
+PORT=3000
+```
+
+3. Iniciar servidor:
+```bash
+node app.js
+```
+
+Requisitos:
+- Node.js - Comprueba con el comando [ node -v ] si lo tienes instalado, de lo contrario lo puedes instalar con el siguiente comando:
+```powershell
+winget install OpenJs.NodeJS.LTS
+```
+Instalación
+
+1. Clona el repositorio y entra en la carpeta del proyecto.
+
+```powershell
+git clone https://github.com/JarithoX/Curso_Online_API_EV2.git
+```
+
+2. Instala las dependencias:  ejecuta `npm install` — esto descargará e instalará las dependencias declaradas en `package.json`.
+
+```powershell
+npm install
+```
+
+3. Configura las credenciales de Firebase: crea un archivo `serviceAccountKey.json` y cargar el contenido de `firebase` dentro de /config. 
+
 ## 📋 Entidades
 
 - `estudiantes`: Gestión de estudiantes
@@ -85,25 +125,6 @@ curl -X POST http://localhost:3000/estudiantes \
   }'
 ```
 
-## ⚙️ Configuración
-
-1. Instalar dependencias:
-```bash
-npm install
-```
-
-2. Configurar variables de entorno:
-```bash
-# Crear archivo .env con:
-AUTH_KEY=api_key_ev2_2023_inacap_123
-PORT=3000
-```
-
-3. Iniciar servidor:
-```bash
-node app.js
-```
-
 ## 🔧 Tecnologías Utilizadas
 
 - Node.js
@@ -127,7 +148,7 @@ node app.js
 ## 🧪 Testing con Postman
 
 1. Importar colección de Postman (incluida en el repo)
-2. Configurar variable de entorno `auth_key`
+2. Configurar variable de entorno `api_key_ev2_2023_inacap_123`
 3. Ejecutar requests
 
 ## 🔐 Seguridad
@@ -137,28 +158,7 @@ node app.js
 - Variables de entorno para configuraciones sensibles
 - CORS habilitado
 
-Requisitos:
-- Node.js - Comprueba con el comando [ node -v ] si lo tienes instalado, de lo contrario lo puedes instalar con el siguiente comando:
-```powershell
-winget install OpenJs.NodeJS.LTS
-```
-Instalación
-
-1. Clona el repositorio y entra en la carpeta del proyecto.
-
-```powershell
-git clone https://github.com/JarithoX/Curso_Online_API_EV2.git
-```
-
-2. Instala las dependencias:  ejecuta `npm install` — esto descargará e instalará las dependencias declaradas en `package.json`.
-
-```powershell
-npm install
-```
-
-3. Configura las credenciales de Firebase: crea un archivo `serviceAccountKey.json` y cargar el contenido de `firebase` dentro de /config. 
-
-3.b Uso de variables de entorno (.env) y claves (recomendado)
+3. Uso de variables de entorno (.env) y claves (recomendado)
 
 - Se utiliza un archivo `.env` local para variables sensibles. No subir al repositorio.
 - Variables principales que puedes usar (ver `.env.example`):
