@@ -77,7 +77,7 @@ const rules = {
 module.exports = function validate(entity) {
   return (req, res, next) => {
     const validator = rules[entity];
-    if (!validator) return res.status(500).json({ error: 'Validator not found for entity: ' + entity });
+    if (!validator) return res.status(500).json({ error: 'Validador no encontrado para la entidad: ' + entity });
     const err = validator(req.body, req);
     if (err) return res.status(400).json({ error: err });
     next();

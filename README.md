@@ -137,11 +137,6 @@ node app.js
 - Variables de entorno para configuraciones sensibles
 - CORS habilitado
 
-## 📄 Licencia
-
-MIT
-Instrucciones mínimas para ejecutar este proyecto en desarrollo.
-
 Requisitos:
 - Node.js - Comprueba con el comando [ node -v ] si lo tienes instalado, de lo contrario lo puedes instalar con el siguiente comando:
 ```powershell
