@@ -13,7 +13,6 @@ const profesoresRouter = require("./routes/profesoresRoute");
 const evaluacionesRouter = require("./routes/evaluacionesRoute");
 const certificadosRouter = require("./routes/certificadosRoute");    
 const auth = require('./middlewares/authMiddleware');
-
 const logger = require('./middlewares/logger');
 
 const app = express();
